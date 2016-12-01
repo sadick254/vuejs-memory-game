@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css?family=Fira+Sans:300');
+body {
+  /*font-family: Consolas;*/
+  font-family: 'Fira Sans', sans-serif;
+  background: #272822;
+  color: #E6DB74;
+}
+.leader {
+  padding-top: 20px;
+}
+header {
+  margin-top:15px;
+  text-align: center;
+}
+h5,h3,h2 {
+  margin-bottom: 0;
+}
+.some {
+  border: 1px solid #F45756;
+}
+.wrong {
+  text-align: right;
+  color: #F45756;
+}
+.number {
+  text-align: center;
+  margin-top: 70px;
+}
+.number h6 {
+  font-size: 10px;
+}
+input[type='text'] {
+  border-radius: 0;
+  background: transparent;
+  font-size: 18px;
+  text-align: center;
+}
+input[type='text'].error {
+  border: 1px solid #F45756;
+}
+.errortext {
+  color: #F45756;
+}
+.bounce-enter-active {
+  animation: bounce-in .5s;
+}
+.bounce-leave-active {
+  animation: bounce-out .5s;
+}
+@keyframes bounce-in {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes bounce-out {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(0);
+  }
+}

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Vuejs Memory Game</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="css/normalize.min.css" rel="stylesheet">
+  <link href="css/skeleton.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="six columns offset-by-three">
+        <header>
+          <h2>Vuejs Memory Game </h2>
+          <span>Greatings, Shall we play a game?</span><br>
+          <span>Re-type the number you see below. Ez right?</span>
+          <br>
+          <br>
+           _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+        </header>
+      </div>
+    </div>
+    <div id="app">
+      <div class="row">
+        <div class="twelve columns">
+          <div class="six columns offset-by-three">
+            <div class="six columns">
+              <h5>Level</h5>
+              <span>{{level}} - {{sublevel}}</span>
+            </div>
+            <div class="six columns wrong">
+              <h5>Wrong</h5>
+              <span>{{errorCount}} / 3</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="twelve columns">
+          <div class="six columns offset-by-three number">
+            ***********************************
+            <h3 id="number" v-bind:class={errortext:wrongFeedback}>{{randomNum}}</h3>
+            ***********************************
+            <br>
+            <br>
+            <br>
+
+            <div v-if="!gameEnd">
+              <label for="number"><h5>Number is ?</h5></label>
+              <input v-bind:class="{error: wrongFeedback}" type="text" name="number" value="" v-model.number="number" v-on:focus="start"
+                v-on:keyup.13="nextNumber">
+            </div>
+
+            <transition name="bounce">
+              <div v-if="gameEnd">
+                <h5 class="errortext">Nice Try, Try Again</h5><br>
+                <button class="button-primary" @click="restartGame">Restart Game</button>
+              </div>
+            </transition>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="libs/vue.js"></script>
+  <script src="js/game.js"></script>
+</body>
+
+</html>
